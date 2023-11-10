@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-400">
+    <h1 class="uppercase text-3xl text-center my-10">photo lab</h1>
+    <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 container mx-auto w-1/2 md:w-4/5">
+        <img src="2.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="3.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="4.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="5.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="6.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="7.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="8.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="9.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="10.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+        <img src="11.jpg" class="hover:scale-125 duration-500 cursor-zoom-in rounded shadow-lg" onclick="popupImage(src)">
+    </div>
+
+    <div class="fixed bg-black w-full h-full top-0 left-0 bg-opacity-60 hidden" id="popScreen" onclick="closeBtn()">
+        <span class="text-4xl text-white absolute top-20 right-20 cursor-pointer hover:text-red-600" onclick="closeBtn()">X</span>
+        <img src="3.jpg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" id="imagePop" onclick="closeBtn()">
+    </div>
+    
+
+    <script>
+        function popupImage(src){
+            const popScreen = document.getElementById('popScreen');
+            popScreen.style.display = 'block';
+            const imagePop = document.getElementById('imagePop');
+            imagePop.src = src;
+        }
+        function closeBtn(){
+            const popScreen = document.getElementById('popScreen');
+            popScreen.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
